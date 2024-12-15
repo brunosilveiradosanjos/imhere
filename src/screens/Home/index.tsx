@@ -40,11 +40,15 @@ export function Home() {
       [
         {
           text: 'Yes',
-          onPress: () =>
+          onPress: () => {
+            setParticipants([
+              ...participants.filter((participant) => participant !== name),
+            ])
             Alert.alert(
               'Deleted',
               'The participant has been successfully removed.',
-            ),
+            )
+          },
         },
         {
           text: 'No',
